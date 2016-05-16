@@ -1,19 +1,28 @@
 angular.module('fizzBuzz', ['ngRoute'])
 	   .config(function($routeProvider){
 	   		$routeProvider
-		   		.when('/',
-		   		{
-		   			controller: 'inPutController',
-		   			templateUrl: 'partials/view1.html'
+		   		.when('/',{
+		   			controller: 'defaultController',
+		   			templateUrl: 'partials/default.html'
 		   		})
-		   		.when('/view2',
+		   		.when('/FizzBuzz',
 		   		{
-		   			controller: 'outPutController',
-		   			templateUrl: 'partials/view2.html'
+		   			controller: 'fizzBuzzEntryController',
+		   			templateUrl: 'partials/fizzbuzzentryview.html'
+		   		})
+		   		.when('/FizzBuzzResults',
+		   		{
+		   			controller: 'fizzBuzzResultController',
+		   			templateUrl: 'partials/fizzbuzzresults.html'
+		   		})
+		   		.when('/Quotes',
+		   		{
+		   			controller: 'APIoutPutController',
+		   			templateUrl: 'partials/famousquotes.html'
 		   		})
 		   		.when('/error',
 		   		{
-		   			controller: 'inPutController',
+		   			controller: 'errorController',
 		   			templateUrl: 'partials/error.html'
 		   		})
 		   		.otherwise({ redirectTo: '/error'});
