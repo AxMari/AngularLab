@@ -27,3 +27,5 @@ angular.module('fizzBuzz', ['ngRoute'])
 		   		})
 		   		.otherwise({ redirectTo: '/error'});
 	   });
+
+	   
