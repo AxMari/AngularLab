@@ -1,12 +1,5 @@
 var gulp = require('gulp');
 var browserSync = require("browser-sync").create();
-var concat = require('gulp-concat-css');
-
-gulp.task('default', function () {
-  return gulp.src('styles.css')
-    .pipe(concat("extra.css"))
-    .pipe(gulp.dest('out/'));
-});
 
 gulp.task('browser-sync', function() {
 	    browserSync.init({
@@ -15,7 +8,12 @@ gulp.task('browser-sync', function() {
 	        }
 
 	    });
-	gulp.watch(["*.html","*.css","*.js", "*.styl"])
+	gulp.watch(["*.html","*.css","*.js"])
 		.on('change',browserSync.reload);
 	});	
 
+   
+ 
+// gulp.task('watch', function () {
+// 	gulp.watch('js/*.js', ['browser-sync', 'lint'])
+// });
